@@ -14,6 +14,11 @@ Class Cart
         dim prod : for each prod in products
             result = result + ( prod.Price * prod.Qty )
         next
+
+        if (ucase(userLevel)="VIP") then 
+            result = result * 0.8
+        end if
+
         ShouldPay = result
     end function
 
