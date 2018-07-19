@@ -3,7 +3,9 @@
 Class CartTest ' Extends TestCase
     Private target
     Public Function TestCaseNames()
-
+        dim testCaseCollection() : redim testCaseCollection(-1)
+        ReDim Preserve testCaseCollection(UBound(testCaseCollection) + 1) : testCaseCollection(UBound(testCaseCollection)) = "ProductsShouldPay_23400"
+        TestCaseNames = testCaseCollection
     End Function
 
     Public Sub SetUp()
@@ -15,8 +17,10 @@ Class CartTest ' Extends TestCase
     End Sub
 
 
-    Public Sub AddNumberTest(oTestResult)
-    'oTestResult.AssertEquals expected, actual
+    Public Sub ProductsShouldPay_23400(oTestResult)
+        dim actual : actual = 23400
+        dim expected : expected = 23400
+        oTestResult.AssertEquals expected, actual
     End Sub
 End Class
 %>
